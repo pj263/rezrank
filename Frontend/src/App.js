@@ -155,6 +155,42 @@ function App() {
           </p>
           </div>
 
+          {/* {
+	"user_id": "1",
+      "resume_id": "1",
+	"resume_name": "Sample Resume 1",
+	"date_created": "March 30, 2020",
+      "date_modified": "April 01, 2021"
+	},
+	{
+	"user_id": "1",
+      "resume_id": "2",
+	"resume_name": "Sample Resume 2",
+	"date_created": "March 30, 2020",
+      "date_modified": "April 01, 2021"
+	} */}
+
+        <table class="result-row">
+          <tr>
+              <td>resume id</td>
+              <td> resume name</td>
+              <td>date created</td>
+              <td>date modified</td>
+          </tr>
+          <tr>
+              <td>1</td>
+              <td>Sample Resume 1</td>
+              <td>March 30, 2020</td>
+              <td>April 01, 2021</td>
+          </tr>
+          <tr>
+              <td>2</td>
+              <td>Sample Resume 2</td>
+              <td>March 30, 2020</td>
+              <td>April 01, 2021</td>
+          </tr>
+        </table>
+
         <div class="field is-grouped section">
       {/* <div class = "is-flex-direction-row"> */}
         <img src="./archive.svg" className="" alt="logo" height = "50" width="50"/>
@@ -173,5 +209,5 @@ function App() {
   );
 }
 
-//export default SignInScreen;
-export default Resumes;
+export default SignInScreen;
+//export default App;
