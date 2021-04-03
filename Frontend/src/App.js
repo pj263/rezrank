@@ -87,14 +87,15 @@ class Resumes extends React.Component {
   render() {
     return (
       <div>
-        <div className="title">My Orders</div>
+        <div className="title">My Resume List</div>
         <ul>
         {
-          this.state.orders && this.state.orders.map(order => {
+          this.state.my_resume_list && this.state.my_resume_list.map(my_resume_list => {
             return (
               <li>
-                <div>Order ID: {order.id}</div>
-                <div>Order status: {order.status}</div>
+                <div>user_id: {my_resume_list.user_id}</div>
+                <div>resume_id: {my_resume_list.resume_id}</div>
+                <div>resume_name: {my_resume_list.resume_name}</div>
               </li>
             )
           })
