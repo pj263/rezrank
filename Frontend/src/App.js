@@ -71,22 +71,60 @@ class SignInScreen extends React.Component {
   }
 }
 
+class Resumes extends React.Component {
+  state = {
+    my_resume_list: null
+  };
+  
+  async componentDidMount() {
+    const response = await fetch('https://17suopjdzb.execute-api.us-east-1.amazonaws.com/resume-list')
+    const resume_list = await response.json()
+    // save it to your components state so you can use it during render
+    this.setState({my_resume_list: resume_list})
+    console.log(resume_list)
+  };
+
+  render() {
+    return (
+      <div>
+        <div className="title">My Orders</div>
+        <ul>
+        {
+          this.state.orders && this.state.orders.map(order => {
+            return (
+              <li>
+                <div>Order ID: {order.id}</div>
+                <div>Order status: {order.status}</div>
+              </li>
+            )
+          })
+        }
+        </ul>
+      </div>
+    )
+  }
+  
+}
+
+
+
 function App() {
+  // state = {
+  //   my_resume_list: null
+  // };
+
+  // async function componentDidMount() {
+  //   const response = await fetch('https://17suopjdzb.execute-api.us-east-1.amazonaws.com/resume-list')
+  //   const resume_list = await response.json()
+  //   // save it to your components state so you can use it during render
+  //   this.setState({my_resume_list: resume_list})
+  //   console.log(my_resume_list)
+  // };
+
   return (
     <div className="App">
       <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          
-        </a> */}
+        
         <p>Home</p>
         <section>
           <p>firstname_lastname@xyz.com <span style={{color:"red"}}>O</span></p>
@@ -134,4 +172,5 @@ function App() {
   );
 }
 
-export default SignInScreen;
+//export default SignInScreen;
+export default Resumes;
