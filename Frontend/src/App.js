@@ -55,19 +55,21 @@ class SignInScreen extends React.Component {
     if (!this.state.isSignedIn) {
       return (
         <div>
-          <h1>My App</h1>
+          <h1>RezRank</h1>
+          <p>Get fast feedback on your Resume and climb up the rank!</p>
           <p>Please sign-in:</p>
           <StyledFirebaseAuth uiConfig={this.uiConfig} firebaseAuth={firebase.auth()}/>
         </div>
       );
     }
-    return (
-      <div>
-        <h1>My App</h1>
-        <p>Welcome {firebase.auth().currentUser.displayName}, {firebase.auth().currentUser.email}! You are now signed-in!</p>
-        <a onClick={() => firebase.auth().signOut()}>Sign-out</a>
-      </div>
-    );
+    return App();
+    // return (
+    //   <div>
+    //     <h1>RezRank</h1>
+    //     <p>Welcome {firebase.auth().currentUser.displayName}, {firebase.auth().currentUser.email}! You are now signed-in!</p>
+    //     <a onClick={() => firebase.auth().signOut()}>Sign-out</a>
+    //   </div>
+    // );
   }
 }
 
